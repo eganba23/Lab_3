@@ -113,12 +113,61 @@ winners.
 
 ### Exercise 4
 
-…
+``` r
+#adding in country born in US to the other nobel living
+us_born_nobel <- nobel_living_science %>%
+  mutate(
+    born_country = if_else(born_country == "USA", "USA", "Other")
+  )
+
+us_born_nobel %>%
+count(born_country)
+```
+
+    ## # A tibble: 2 × 2
+    ##   born_country     n
+    ##   <chr>        <int>
+    ## 1 Other          123
+    ## 2 USA            105
+
+105 people born in the USA, 123 were not. …
 
 ### Exercise 5
+
+Plot for born in USA winners
+
+``` r
+ggplot(
+  data = us_born_nobel,
+  mapping = aes(
+    x = born_country,
+  )
+) +
+   geom_bar()+
+  facet_wrap(~category)+
+  theme_bw()+
+  coord_flip()+
+  labs(
+      x = "Birth Country",
+      y = "Number of Prize Winners",
+      title = "Relationship Between Prize Winner and Birth Country"
+  )
+```
+
+![](lab-03_files/figure-gfm/born%20in%20USA-1.png)<!-- --> Buzzfeed got
+it right about more nobel winners immigrating to USA. The only exception
+is if we’re talking about economics, as econ winners mostly are US
+citizens in the united states.
 
 …
 
 ### Exercise 6
+
+``` r
+nobel_international <- nobel %>%
+ filter(country == "USA" & born_country != "USA") %>%
+  count(born_country) %>%
+  arrange(desc(n))
+```
 
 …
