@@ -17,6 +17,7 @@ nobel <- read_csv("data/nobel.csv")
 
 ### Exercise 1
 
+Using dataset “Nobel”, which examines information about nobel winners
 There are 26 variables and 935 rows. Each row is a person (so in theory
 there are 934 people in the nobel dataset).
 
@@ -54,23 +55,61 @@ glimpse(nobel)
     ## $ country_original      <chr> "Germany", "the Netherlands", "the Netherlands",…
 
 ``` r
+#count(nobel) can give a table that tells me the number in each variable
 #head(nobel) - gives it looking more like a table
-
-#nobel_living <- nobel %>%
- # filter(country != "NA" & gender != "org" & died_date == "NA")
 ```
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+filtered out people who don’t have a country, organizations that won a
+nobel, and people who are dead
+
+``` r
+nobel_living <- nobel %>%
+ filter(country != "NA" & gender != "org" & is.na(died_date))
+```
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+Created a dataset for American winners in physics, medicine, chemistry,
+and economics
+
+``` r
+#are they in the US
+nobel_living <- nobel_living %>%
+  mutate(
+    country_us = if_else(country == "USA", "USA", "Other")
+  )
+
+#Physics, Medicine, Chemistry, and Economics
+nobel_living_science <- nobel_living %>%
+  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
+```
+
+Graph for the relationship between the category of prize and whether the
+laureate was in the US when they won the nobel prize
+
+``` r
+ggplot(
+  data = nobel_living_science,
+  mapping = aes(
+    x = country_us,
+  )
+) +
+  facet_wrap(~category)+
+  theme_bw()+
+  geom_bar()+
+  coord_flip()+
+  labs(
+      x = "Country",
+      y = "Number of Prize Winners",
+      title = "Relationship Between Prize Winner and Country"
+  )
+```
+
+![](lab-03_files/figure-gfm/visual%20plot-1.png)<!-- --> More USA
+winners in each category. Economics has a disproportionate number of USA
+winners.
 
 ### Exercise 4
 
