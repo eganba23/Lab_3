@@ -20,6 +20,7 @@ nobel <- read_csv("data/nobel.csv")
 ### Exercise 1
 
 Using dataset "Nobel", which examines information about nobel winners
+
 There are 26 variables and 935 rows. Each row is a person (so in theory there are 934 people in the nobel dataset).
 
 ```{r get info on dataset}
@@ -77,7 +78,7 @@ ggplot(
   )
  
 ```
-More USA winners in each category. Economics has a disproportionate number of USA winners.
+More USA winners in each category. Economics has a disproportionate number of USA winners. This isn't supporting much to support the buzzfeed article.
 
 
 ### Exercise 4
@@ -133,6 +134,6 @@ nobel_international <- nobel %>%
   print()
 
 ```
-
+UK is most common for US immigrants who won the nobel prize.
 
 ...
