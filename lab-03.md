@@ -1,17 +1,9 @@
 Lab 03 - Nobel laureates
 ================
 Benjamin Egan
-Started on 1/27
+1/27
 
 ### Load packages and data
-
-``` r
-library(tidyverse) 
-```
-
-``` r
-nobel <- read_csv("data/nobel.csv")
-```
 
 ## Exercises
 
@@ -54,11 +46,6 @@ glimpse(nobel)
     ## $ died_city_original    <chr> "Munich", NA, "Amsterdam", NA, "Paris", "Sallanc…
     ## $ city_original         <chr> "Munich", "Leiden", "Amsterdam", "Paris", "Paris…
     ## $ country_original      <chr> "Germany", "the Netherlands", "the Netherlands",…
-
-``` r
-#count(nobel) can give a table that tells me the number in each variable
-#head(nobel) - gives it looking more like a table
-```
 
 ### Exercise 2
 
