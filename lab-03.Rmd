@@ -5,7 +5,7 @@ date: "1/27"
 output: github_document
 ---
 
-### Load packages and data
+
 
 ```{r load-packages, message=FALSE, echo=FALSE}
 #used echo=false to make this box go away
