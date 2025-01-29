@@ -140,5 +140,3 @@ nobel_international <- nobel %>%
 
 ```
 UK is most common for US immigrants who won the nobel prize.
-
-...

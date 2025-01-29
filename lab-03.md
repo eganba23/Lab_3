@@ -3,8 +3,6 @@ Lab 03 - Nobel laureates
 Benjamin Egan
 1/27
 
-### Load packages and data
-
 ## Exercises
 
 ### Exercise 1
@@ -49,7 +47,7 @@ glimpse(nobel)
 
 ### Exercise 2
 
-filtered out people who don’t have a country, organizations that won a
+Filtered out people who don’t have a country, organizations that won a
 nobel, and people who are dead
 
 ``` r
@@ -176,4 +174,8 @@ nobel_international <- nobel %>%
 
 UK is most common for US immigrants who won the nobel prize.
 
-…
+``` r
+rnorm(5, mean = 0, sd = 1)
+```
+
+    ## [1]  0.47229037 -1.22279934  0.22116256  0.70893757 -0.05047655
