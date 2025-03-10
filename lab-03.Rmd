@@ -5,7 +5,7 @@ date: "1/27"
 output: github_document
 ---
 
-
+Link to assignment: https://datascience4psych.github.io/DataScience4Psych/lab03.html
 
 ```{r load-packages, message=FALSE, echo=FALSE}
 #used echo=false to make this box go away
