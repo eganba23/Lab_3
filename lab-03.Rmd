@@ -7,6 +7,9 @@ output: github_document
 
 Link to assignment: https://datascience4psych.github.io/DataScience4Psych/lab03.html
 
+Link to archived assignment link: https://web.archive.org/web/20250414135349/https://datascience4psych.github.io/DataScience4Psych/lab03.html#lab-prep
+
+
 ```{r load-packages, message=FALSE, echo=FALSE}
 #used echo=false to make this box go away
 library(tidyverse) 
